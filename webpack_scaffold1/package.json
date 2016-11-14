@@ -1,0 +1,39 @@
+{
+  "name": "webpack_scaffold",
+  "version": "1.0.0",
+  "description": "a scaffold with webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --port 8080 --hot --inline --progress --colors --devtool eval",
+    "build": "webpack --display-error-details",
+    "watch": "webpack --progress --colors --watch"
+  },
+  "author": "Ruth",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "css-loader": "^0.25.0",
+    "mustache-loader": "^0.3.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.1",
+    "scss-loader": "0.0.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RukiQ/webpack_scaffold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RukiQ/webpack_scaffold/issues"
+  },
+  "homepage": "https://github.com/RukiQ/webpack_scaffold#readme"
+}
