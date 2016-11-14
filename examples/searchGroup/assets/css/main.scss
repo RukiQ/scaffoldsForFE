@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+}
+
+#query-app {
+  width: 100%;
+}
+
+/* header */
+.header {
+  background: #000;
+}
+
+.logo {
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  background: url(../image/query_icon.png) no-repeat;
+  background-size: 40px 40px;
+  background-position: center left;
+  padding-left: 50px;
+  margin-left: 15px;
+  z-index: 2;
+}
+
+/* content */
+.content {
+  width: 1440px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+#query-form {
+  .col {
+    display: inline-block;
+    vertical-align: top;
+
+    .item {
+      margin: 10px 0;
+    }
+  }
+
+  .first-col {
+    margin-right: 100px;
+    label {
+      width: 100px;
+    }
+  }
+
+  .biz-input, .biz-select, .biz-calendar {
+    width: 200px; 
+    height: 30px;
+  }
+
+  .price-low, .price-up {
+    width: 100px;
+    height: 25px;
+  }
+
+  .biz-button {
+    height: 22px;
+  }
+}
+
+.query-result {
+  margin-top: 30px;
+}
+
+.list-title {
+  h3, .list-info {
+    display: inline-block;
+  }
+
+  .list-info {
+    color: #818181;
+  }
+}
+
+.list-table {
+    margin: 8px 0 10px;
+  }
+
+  .page-group {
+    height: 30px; 
+    line-height: 30px; 
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif; 
+    font-size: 14px;
+
+    .page-item {
+      margin-right: 20px;
+    }
+  
+    .selectBox-dropdown {
+      min-width: 50px;
+    }
+
+    .pagination {
+      width: 50px;
+    }
+
+    .page-number {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    a {
+      margin-right: 5px;
+
+      &:hover {
+        color: blue;
+      }
+    }
+
+    .go {
+      width: 30px;
+      height: 20px;
+      background: #1f7fb5;
+      color: #fff;
+      border: 1px solid #4491bf;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .disable {
+      color: #ccc;
+    }
+  }
+
+
+
