@@ -26,3 +26,5 @@ a scaffold with webpack
 
 - [webpack-dev-server 使用方法，看完还不会的来找我~](http://gold.xitu.io/entry/57b94d8879bc44005ba13b4c)
 - [ERROR in Cannot find module 'node-sass'](http://www.jianshu.com/p/9850659c363e)
+
+☂ 具体细节请参考参考：[webpack_scaffold1](https://github.com/RukiQ/scaffoldsForFE/tree/master/webpack_scaffold1)

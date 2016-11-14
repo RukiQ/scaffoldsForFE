@@ -4,10 +4,12 @@ a very simple scaffold with webpack and react
 ## 目录结构
 
 asset/
+
 - css/
 - img/
 
 src/
+
 - entry.js ------------------------ 入口文件
 
 .babelrc
@@ -128,7 +130,7 @@ webpack.config.js
 
 需要更多其它配置，请参考 [webpack_scaffold](https://github.com/RukiQ/webpack_scaffold)
 
-[github地址]()
+github地址：[react\\_webpack\\_scaffold](https://github.com/RukiQ/scaffoldsForFE/tree/master/react_webpack_scaffold)
 
 ## 参考资源
 
