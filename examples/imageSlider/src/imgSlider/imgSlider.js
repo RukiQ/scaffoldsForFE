@@ -2,12 +2,14 @@
  * @Author: qianlu
  * @Date:   2016-11-16 15:42:57
  * @Last Modified by:   qianlu
- * @Last Modified time: 2016-11-16 17:44:16
+ * @Last Modified time: 2016-11-21 15:20:23
  */
 
 'use strict';
 import "../../assets/css/style.scss"
 import tpls from './ImgSlider.tpl';
+
+let Distance;
 
 class ImgSlider {
     constructor(options) {
@@ -17,13 +19,13 @@ class ImgSlider {
     }
 
     initSelectors() {
-        this.$wrap = $('#wrap');
-        this.$inner = $('#inner');
-        this.$slider = $('#slider');
-        this.spanList = $('span');
+        this.$wrap = this.$el.find('.wrap');
+        this.$inner = this.$el.find('.inner');
+        this.$slider = this.$el.find('.slider');
+        this.spanList = this.$el.find('span');
         this.spanLen = this.spanList.length;
-        this.$prev = $('#prev');
-        this.$next = $('#next');
+        this.$prev = this.$el.find('.prev');
+        this.$next = this.$el.find('.next');
 
         return this;
     }
@@ -33,7 +35,7 @@ class ImgSlider {
 
         this.$slider.on('click', 'span', function() {
             me.index = $(this).text() - 1;
-            me.autoGo();
+            me.autoSlide();
         });
 
         this.$prev.on('click', () => {
@@ -44,18 +46,42 @@ class ImgSlider {
             this.toNext();
         });
 
+        this.$wrap.on('mouseover', () => {
+            this.stopSlide();
+        });
+
+        this.$wrap.on('mouseout', () => {
+            this.beginSlide();
+        });
+
         return this;
     }
 
     init() {
         this.$el.append(tpls());
         this.initSelectors().initEvents();
+
+        Distance = this.$wrap.width(); // 获取展示区的宽度，即每张图片的宽度
+
+        // 开启图片自动向右滑动的计时器
+        this.beginSlide();
     }
 
-    autoGo() {
-        const Distance = this.$wrap.width(); // 获取展示区的宽度，即每张图片的宽度
+    // 开始滑动
+    beginSlide() {
+        this.time = setInterval(() => {
+            this.toNext();
+        }, 3000);
+    }
 
-        let start = $(inner).position().left, // 获取移动块当前的left的开始坐标
+    // 停止滑动
+    stopSlide() {
+        clearInterval(this.time);
+    }
+
+    // 滑动实现
+    autoSlide() {
+        let start = this.$inner.position().left, // 获取移动块当前的left的开始坐标
             end = this.index * Distance * (-1), // 获取移动块移动结束的坐标
             // 计算公式即当移动到第三张图片时，图片下标为2乘以图片的宽度就是块的left值
             change = end - start;
@@ -89,9 +115,13 @@ class ImgSlider {
         }, 17);
     }
 
+    // 更改序号按钮样式
     toggleStyles() {
-        this.spanList.removeClass('selected'); // 先把按钮状态清除，再让对应按钮改变状态
 
+        // 先把按钮状态清除，再让对应按钮改变状态
+        this.spanList.removeClass('selected');
+
+        // 如果下标等于图片长度，则选中序号1（回到第一幅图片）
         if (this.index == this.spanLen) {
             $(this.spanList[0]).addClass('selected');
         } else {
@@ -99,25 +129,25 @@ class ImgSlider {
         }
     }
 
+    // 滚到前一幅图片
     toPrev() {
-        const Distance = this.$wrap.width(); // 获取展示区的宽度，即每张图片的宽度
-
         this.index--;
-        if (this.index < 0) {
+        if (this.index < 0) { // 如果序号小于0了，则回滚到最后一幅图片
             this.index = this.spanLen - 1;
             this.$inner.css({
                 'left': (this.index + 1) * Distance * (-1) + 'px'
             })
         }
-        this.autoGo();
+        this.autoSlide();
     }
 
+    // 滚到下一幅图片
     toNext() {
         this.index++;
-        if (this.index > this.spanLen) {
+        if (this.index > this.spanLen) { // 如果序号大于图片长度，则回滚到第一幅图片
             this.index = 0;
         }
-        this.autoGo();
+        this.autoSlide();
     }
 }
 
