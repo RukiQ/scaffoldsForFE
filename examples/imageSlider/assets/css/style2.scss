@@ -2,7 +2,7 @@
 * @Author: qianlu
 * @Date:   2016-11-21 14:44:23
 * @Last Modified by:   qianlu
-* @Last Modified time: 2016-11-21 15:59:59
+* @Last Modified time: 2016-11-21 16:42:52
 */
 
 .wrap {
@@ -14,38 +14,36 @@
     overflow: hidden;
 }
 
-.inner {
-    width: 1000%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    img {
-        width: 10%;
-        float: left;
-    }
+img {
+    width: 100%;
+    float: left;
 }
 
-.slider {
-    width: 100%;
+ul {
+    list-style: none;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 10px;
+    font-size: 14px;
+}
+
+li {
+    float: left;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 50%;
     text-align: center;
-    span {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        line-height: 20px;
-        font-size: 14px;
-        background: #F2F2F2;
-        color: red;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .selected {
-        background: red;
-        color: white;
-    }
+    background: #F2F2F2;
+    color: red;
+    cursor: pointer;
+}
+
+.cur {
+    background: red;
+    color: white;
 }
 
 .arrow {
