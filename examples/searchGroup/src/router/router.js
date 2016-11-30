@@ -1,22 +1,24 @@
-import QueryView from './query/QueryView.js';
-import TableView from './table/TableView.js';
-import TableModel from './table/TableModel.js';
-import Global from './global.js';
+import QueryView from '../app/query/QueryView';
+import TableView from '../app/table/TableView';
+import TableModel from '../app/table/TableModel';
+import Global from '../common/global';
 
 let Router = Backbone.Router.extend({
     routes: {
         '': 'index',
         'search/~': 'searchView',
-        'search/~:params': 'searchView' 
+        'search/~:params': 'searchView'
     },
 
-    initialize () { },
+    initialize() {},
 
-    index () {
-        this.navigate('#search/~', {trigger: true});
+    index() {
+        this.navigate('#search/~', {
+            trigger: true
+        });
     },
 
-    searchView (params) {
+    searchView(params) {
 
         //解析params成为一个json对象
         if (params) {
@@ -26,7 +28,7 @@ let Router = Backbone.Router.extend({
         }
 
         //初始化queryView和tableView，保证是单例，不会重复创建
-        if(!this.queryView && !this.tableView){
+        if (!this.queryView && !this.tableView) {
             this.tableModel = new TableModel();
 
             this.queryView = new QueryView();
@@ -40,16 +42,16 @@ let Router = Backbone.Router.extend({
         this.queryView.init(params);
     },
 
-    nav (hash, params, navConfig){
-        this.navigate([hash,$.param(params)].join('~'), navConfig);
+    nav(hash, params, navConfig) {
+        this.navigate([hash, $.param(params)].join('~'), navConfig);
     },
 
     // 将查询参数转换成对象
-    queryToObj (arg) {
+    queryToObj(arg) {
         let arr = arg.split('&');
         let argObj = {};
 
-        for (let i=0, len=arr.length; i<len; i++) {
+        for (let i = 0, len = arr.length; i < len; i++) {
             let tempArr = arr[i].split('=');
             let key = tempArr[0];
             let value = tempArr[1];

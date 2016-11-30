@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* header */
+
+.header-wrap {
+    background: #039be5;
+    position: relative;
+}
+
+.header,
+.content,
+.footer {
+    width: 1440px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+}
+
+.logo {
+    display: inline-block;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 83px 45px;
+}
+
+.right {
+    float: right;
+}
+
+.header {
+    padding: 10px 80px 10px 48px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 45px;
+    .logo {
+        padding-left: 92px;
+    }
+    em {
+        font-style: normal;
+        margin-right: 12px;
+    }
+}
+
+.menu {
+    display: inline-block;
+    margin-left: 84px;
+    li {
+        display: inline-block;
+        margin-right: 58px;
+    }
+    a {
+        color: #fff;
+        font-size: 16px;
+        position: relative;
+    }
+    .homepage {
+        color: #000;
+        &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 8px;
+            bottom: -23px;
+            width: 0;
+            height: 0;
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
+    }
+}
+
+.submenu {
+    position: absolute;
+    width: 1314px;
+    line-height: 30px;
+    border-bottom: 1px solid #edecec;
+    margin-top: 24px;
+    left: 48px;
+    li {
+        display: inline-block;
+    }
+    a {
+        display: inline-block;
+        width: 80px;
+        text-align: center;
+        font-size: 14px;
+        color: #006190;
+    }
+    .group {
+        color: #393939;
+        border-bottom: 1px solid #000;
+    }
+}
+
+/* content */
+
+.content {
+    width: 1440px;
+    margin-top: 100px;
+    margin-bottom: 122px;
+    padding: 0 82px 0 56px;
+}
+
+#query-form {
+    .col {
+        display: inline-block;
+        vertical-align: top;
+        .item {
+            margin: 10px 0;
+        }
+    }
+    .first-col {
+        margin-right: 100px;
+        label {
+            width: 100px;
+        }
+    }
+    .group-name,
+    .calendar {
+        width: 200px;
+        height: 20px;
+    }
+    .channel {
+        width: 210px;
+        height: 30px;
+        margin-left: 2px;
+    }
+    .price {
+        width: 100px;
+        height: 20px;
+    }
+    .biz-button {
+        height: 22px;
+    }
+}
+
+.query-result {
+    margin-top: 30px;
+
+    .table {
+        min-height: 175px;
+    }
+}
+
+.list-title {
+    h3,
+    .list-info {
+        display: inline-block;
+    }
+    .list-info {
+        color: #818181;
+    }
+}
+
+.list-table {
+    margin: 8px 0 10px;
+}
+
+/* .page-wrap {
+    height: 30px;
+    line-height: 30px;
+    font-family: "Microsoft Yahei", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    .page-item {
+        margin-right: 20px;
+    }
+    .selectBox-dropdown {
+        min-width: 50px;
+    }
+    .pagination {
+        width: 50px;
+    }
+    .page-number {
+        width: 30px;
+        margin-right: 10px;
+    }
+    a {
+        margin-right: 5px;
+        &:hover {
+            color: blue;
+        }
+    }
+    .go {
+        width: 30px;
+        height: 20px;
+        background: #1f7fb5;
+        color: #fff;
+        border: 1px solid #4491bf;
+        text-align: center;
+        border-radius: 2px;
+    }
+    .disable {
+        color: #ccc;
+    }
+}
+ */
+/* footer */
+
+.footer-wrap {
+    background: #3e3e3e;
+}
+
+.footer {
+    padding: 30px 106px 60px 120px;
+    color: #999;
+    font-size: 9px;
+    .logo {
+        padding-top: 48px;
+        background-size: 53px 29px;
+    }
+    ul {
+        display: inline-block;
+        vertical-align: top;
+        padding: 0 16px 0 68px;
+        color: #5c5c5c;
+        &:first-child {
+            border-right: 1px solid #4c4c4c;
+        }
+    }
+    li {
+        span {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        a {
+            color: #5c5c5c;
+            display: inline-block;
+            height: 18px;
+            line-height: 18px;
+        }
+    }
+}
