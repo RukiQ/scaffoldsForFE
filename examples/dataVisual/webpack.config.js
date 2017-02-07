@@ -7,8 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     // devtool: 'eval-source-map',
     entry: {
-        index: './src/entry.js',
-        vendor: ['jquery'] // 这里是依赖的库文件配置，和CommonsChunkPlugin配合使用可以单独打包
+        index: './src/entry.js'
     },
     output: {
         path: './dist', // webpack 本地打包路径
@@ -41,21 +40,9 @@ module.exports = {
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url-loader?limit=8192'
-        }, {
-            test: /\.tpl$/,
-            loader: 'mustache'
         }]
     },
     plugins: [
-        // 暴露全局接口
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        }),
-        new ExtractTextPlugin('main.css'),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.js'
-        })
+        new ExtractTextPlugin('main.css')
     ]
 }
