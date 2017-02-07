@@ -1,2 +1,3 @@
-# front-end-lab
-some demos using css/js/jquery/webpack
+# webapp slider
+
+web app 滑动示例

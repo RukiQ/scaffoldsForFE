@@ -1,2 +1,3 @@
-# front-end-lab
-some demos using css/js/jquery/webpack
+# search group
+
+search demo using es6/backbone/jquery/webpack
