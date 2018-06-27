@@ -2,10 +2,11 @@
 
 scaffolds for popular techs
 
+请分别查看各个分支内容。
+
 ```
 git checkout https://github.com/RukiQ/scaffoldsForFE.git
 ```
-
 
 ### 4. webpack4_demo
 
