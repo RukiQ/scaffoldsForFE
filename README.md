@@ -1,2 +1,1 @@
-# scaffoldsForFE
-scaffolds for popular techs
+# webpack4 + react
