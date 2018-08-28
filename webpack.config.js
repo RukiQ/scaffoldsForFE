@@ -1,6 +1,5 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const lessExtract = new ExtractTextPlugin('css/less.css');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -48,7 +47,8 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                use: lessExtract.extract({
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
                     use: ['css-loader','less-loader']
                 })
             },
@@ -82,6 +82,10 @@ module.exports = {
         }
     },
     plugins: [
+        // 提取 css
+        new ExtractTextPlugin('[name].css', {
+            allChunks: false
+        }),
         // 产出 HTML
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'index.html'),   // 模板
